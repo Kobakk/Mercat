@@ -1,3 +1,8 @@
+# Ignorar siguientes carpetas del backend
+backend/node_modules/
+backend/.env
+backend/models
+backend/static
 # Logs
 logs
 *.log
