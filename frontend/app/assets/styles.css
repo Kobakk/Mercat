@@ -1,10 +1,372 @@
-.book {
-  /* max-width: 18rem; */
-  /* margin-bottom: 3rem; */
-  margin-bottom: calc(1 * var(--bs-gutter-x));
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --background: #31363F;
+  --gradient:linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  --font: #EEEEEE;
+  --contrast:#76ABAE;
+  --naranja: #ff9a3c;
+  --font-family:"Inter", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-mobile: 14px;
+  --font-size-tablet: 16px;
+  --font-size-desktop: 20px;
+}
+/* CSS Responsive Firts Mobile */
+html{
+  font-family: var(--font-family);
+  color: var(--font);
+  background: var(--background);
+  font-size: var(--font-size-mobile);
+}
+body{
+  background:var(--gradient) ;
+}
+/*------------------ Header -----------------*/
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+.nav-list {
+  height: 0;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100vw;
+  background: var(--gradient);
+  text-decoration: none;
+  opacity: 0;
+  overflow: hidden;
+}
+.nav-list.active{
+  height: 100%;
+  overflow: unset;
+  position: absolute;
+  opacity: 1;
+  background: var(--gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.nav-item{
+  margin: 1.5em;
+}
+ul{
+  list-style: none;
+}
+.nav-link, .nav-item, .logo-titulo, .button-work{
+  font-size: var(--font-size-tablet);
+  transition: 0.5s;
+  font-weight: 500;
+}
+/* Hamburger Menu*/
+.hamburger{
+  display: block;
+  padding: 7px 0;
+  cursor: pointer;
+}
+.hamburger .line{
+  width: 27px;
+  height: 2px;
+  background: var(--font);
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 25px
+}
+.hamburger.--open .line:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.--open .line:nth-child(2){
+    opacity: 0;
+}
+.hamburger.--open .line:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+/**/
+.logo{
+   padding: 5px;
+   margin: 5px;
+   color: var(--contrast);
+}
+.logo-titulo{
+  font-weight: 800;
+  font-size: 17px;
+}
+li{
+   border-radius: 1.5em;
+}
+p{
+  line-height: 2;
+}
+img{
+  border-radius: 100%;
+}
+a {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: var(--font-size-mobile);
+  color: unset;
+}
+a:hover{
+  color: orange;
 }
 
-.book:hover {
-  transition: all 0.5s ease;
-  transform: scale(1.1);
+/*------------------ Main Content -----------------*/
+main{
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.small-box{
+  margin: unset;
+}
+.tech-box{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/*Presentation*/
+.presentation{
+  margin-top: 24px;
+}
+.titulo{
+  font-weight: 900;
+  font-size: 40px;
+  color: var(--contrast);
+}
+.sub-titulo{
+  margin-bottom: 10px;
+}
+.main-text{
+  font-size: var(--font-size-mobile);
+  margin-bottom: 15px;
+}
+.box-avatar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  order: 1;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.avatar{
+  width: 150px;
+}
+/* ICONOS */
+.iconos{
+  max-width: 23px;
+}
+/* Sections and Boxes*/
+section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.box-center{
+  align-self: center;
+}
+.trabajo{
+  color: var(--contrast);
+  font-weight: 400;
+  font-size: 15px;
+}
+h3{
+  padding-bottom: 20px;
+  font-size: 21px;  
+}
+h4{
+  color: var(--naranja);
+  font-size: 18px;
+  font-weight: 600;
+}
+.button-work{
+  border: 0.5px solid green;
+  padding: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-size: var(--font-size-mobile);
+  background: #222831;
+  align-self: center;
+  cursor: pointer;
+}
+
+
+/* Fin de problemas de cajas por no tener un tamaño predeterminado*/
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+footer > a{
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.cuadrado{
+  border-radius: 5px;
+  width: 95%;
+  margin: 10px;
+}
+.orange{
+  color: var(--naranja);
+  font-weight: 600;
+  font-size: 15px;
+}
+.box-enlaces{
+display: flex;
+justify-content: center;
+gap: 25px;
+}
+.box-enlaces>a{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+footer{
+  margin: 50px;
+}
+.enlace{
+  border: 0.25px solid rgb(32, 38, 57);
+  border-radius: 15px;
+  padding: 5px 10px;
+  background: rgb(32, 38, 57);
+}
+p{
+  font-size: var(--font-size-mobile);
+}
+/*Tablet Vista*/
+@media only screen and (min-width: 768px){
+  .box-enlaces{
+    gap: 50px;
+  }
+  p{
+    font-size: var(--font-size-tablet);
+  }
+  .cuadrado{
+    width: 100%;
+  }
+  .header{
+    width: 100%;
+    height: 40px;
+  }
+.nav-link{
+  font-size: 14px;
+  font-weight: 500;
+}
+.logo-titulo{
+  font-size: 22px;
+}
+/*Menu Hamburger*/
+.hamburger{
+  display: none;
+  visibility: hidden;
+}
+.header{
+  display: flex;
+  justify-content: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 0;
+  max-width: 500px;
+}
+.nav-list {
+  visibility: unset;
+  display: flex;
+  left: 0;
+  right: 0;
+  list-style: none;
+  flex-direction: row;
+  opacity: 1;
+  overflow: unset;
+  top: 0;
+  position: unset;
+  justify-content: center;
+}
+.box{
+  display: flex;
+  align-self: center;
+  text-align: justify;
+  min-width: 700px;
+}
+.bento{
+  min-width: 200px;
+  max-width: 600px;
+}
+.presentation{
+  flex-direction: row;
+}
+
+.img-box{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.box-avatar{
+  order: unset;
+  padding-right: 20px;
+}
+.avatar{
+  width: 150px;
+}
+.orange{
+  font-size: 17px;
+}
+.main-text{
+  font-size: 17px;
+}
+}
+/*Desktop Vista*/
+@media only screen and (min-width: 992px){
+  .logo{
+    padding-top: 15px;
+  }
+  p{
+    font-size: 18px;
+  }
+  .section-title{
+    font-size: 25px;
+  }
+  .orange{
+    font-size: 20px;
+  }
+  .main-text{
+    font-size: var(--font-size-desktop);
+  }
+  section{
+    margin-top: 20px;
+  }
+  .presentation{
+    margin-top: 50px;
+  }
+  .titulo{
+    font-size: 40px;
+  }
+  .sub-titulo{
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  /*---- Imagenes ----*/
+  .cuadrado{
+    width: 100%;
+    border-radius: 5px;
+  }
+  .cuadrado:hover{
+    width: 120%;
+  }
+  /*--- Cajas ---*/
+  .bento{
+    max-width: 800px;
+  }
 }

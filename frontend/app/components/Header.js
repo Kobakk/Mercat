@@ -18,7 +18,7 @@ export function Header() {
 
       <ul class="nav-list">
         <li class="nav-item"><a href="index.html" class="nav-link">Presentación</a></li>
-        <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li class="nav-item"><a href="#registro" class="nav-link">Categorias</a></li>
         <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
     </nav>

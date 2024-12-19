@@ -1,15 +1,29 @@
-export function peticion(arg){
-    const  {cb, url} = arg;
-    fetch(url)
-    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-    .then((response) => {
-        console.log(response["data"])
-        for(let value in response["data"]){
-            console.log(response["data"][value])
-        }
-    })
-    .then((res)=>cb(res))
-    .catch(err => console.log(err))
-    .finally()
-    
-}
+export async function peticion(obj) {
+    let { url, cbSuccess } = obj;
+    try {
+      let respuesta = await fetch(url, { method: "GET" });
+      if (!respuesta.ok) {
+        throw respuesta;
+      }
+      let json = await respuesta.json();
+      cbSuccess(json);
+    } catch (err) {
+      let { respuesta } = err;
+      console.log(respuesta.status);
+    }
+  }
+  export async function peticionRandom(obj) {
+    let { url, cbSuccess } = obj;
+    try {
+      let respuesta = await fetch(url, { method: "GET" });
+      if (!respuesta.ok) {
+        throw { respuesta };
+      }
+      let json = await respuesta.json();
+      cbSuccess(json);
+    } catch (err) {
+      let { respuesta } = err;
+      console.log(respuesta.status);
+    }
+  }
+  
